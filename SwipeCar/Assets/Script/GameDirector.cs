@@ -19,6 +19,14 @@ public class GameDirector : MonoBehaviour
     void Update()
     {
         float length = this.flag.transform.position.x - this.car.transform.position.x;
-        this.distance.GetComponent<Text>().text = "ゴールまで" + length.ToString("F2") + "m";
+        if(length >= 0)
+        {
+            this.distance.GetComponent<Text>().text = "ゴールまで" + length.ToString("F2") + "m";
+        }
+        else
+        {
+            this.distance.GetComponent<Text>().text = "ゲームオーバー";
+        }
+
     }
 }
